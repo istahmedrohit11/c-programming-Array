@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main() {
+    int arr[50],size;
+    int i,num,pos,item;
+    printf("Enter the size of array:");
+    scanf("%d",&size);
+    printf("Enter the elements:");
+    for(i=0;i<size;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("The elements are:");
+     for(i=0;i<size;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    printf("Enter the element you want to delate: ");
+    scanf("%d",&pos);
+    if(pos<1||pos>size+1){
+        printf("Invalid position");
+        return 1;
+    }
+    item=arr[pos-1];
+    printf("delated number is:%d\n",item);
+    for(i=pos-1;i<size-1;i++){
+        arr[i]=arr[i+1];
+    }
+    size--;
+    printf("After delate:");
+    for(i=0;i<size;i++){
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+
